@@ -1,0 +1,530 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #eef2f7;
+
+    color: #1f2937;
+}
+
+
+header {
+
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+
+header h1 {
+
+    margin: 0 0 10px 0;
+
+}
+
+
+.sistema {
+
+    width: 95%;
+
+    max-width: 1200px;
+
+    margin: 25px auto;
+}
+
+
+
+/* CPU */
+
+.cpu {
+
+    background: white;
+
+    border: 4px solid #2563eb;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+
+}
+
+
+.cpu h2 {
+
+    text-align: center;
+
+    color: #1d4ed8;
+
+}
+
+
+
+/* REGISTROS */
+
+.registros {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.registro {
+
+    background: #eff6ff;
+
+    border: 2px solid #60a5fa;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+
+.registro.activo {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 15px rgba(37,99,235,.6);
+
+}
+
+
+.registro h3 {
+
+    margin: 0 0 10px;
+
+    color: #1d4ed8;
+
+}
+
+
+.registro span {
+
+    display: block;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+.registro small {
+
+    color: #555;
+
+}
+
+
+
+/* UNIDADES */
+
+.unidades {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 25px;
+
+}
+
+
+.unidad {
+
+    width: 300px;
+
+    padding: 15px;
+
+    background: #f3f4f6;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+}
+
+
+
+/* BUSES */
+
+.buses {
+
+    margin: 25px 0;
+
+}
+
+
+.bus {
+
+    position: relative;
+
+    height: 55px;
+
+    margin: 12px 0;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-weight: bold;
+
+    overflow: hidden;
+
+}
+
+
+#busDirecciones {
+
+    background: #7c3aed;
+
+}
+
+
+#busDatos {
+
+    background: #2563eb;
+
+}
+
+
+#busControl {
+
+    background: #059669;
+
+}
+
+
+
+/* PARTÍCULA */
+
+.particula {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 35px;
+
+    background: white;
+
+    color: #111;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    animation: mover 1.5s linear;
+
+}
+
+
+@keyframes mover {
+
+    from {
+
+        left: -40px;
+
+    }
+
+    to {
+
+        left: 100%;
+
+    }
+
+}
+
+
+
+/* HARDWARE */
+
+.hardware {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.dispositivo {
+
+    background: white;
+
+    border: 3px solid #6b7280;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+
+.dispositivo.activo {
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.5);
+
+}
+
+
+.icono {
+
+    font-size: 40px;
+
+}
+
+
+.memoria {
+
+    margin-top: 15px;
+
+}
+
+
+.memoria div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 8px;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+.archivo {
+
+    padding: 10px;
+
+    background: #f3f4f6;
+
+    margin: 8px;
+
+    border-radius: 8px;
+
+}
+
+
+.dispositivo button {
+
+    padding: 10px;
+
+    margin: 5px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+
+/* EXPLICACIÓN */
+
+.explicacion {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    border-left: 6px solid #2563eb;
+
+}
+
+
+#tituloPaso {
+
+    color: #1d4ed8;
+
+}
+
+
+
+/* BOTONES */
+
+.controles {
+
+    text-align: center;
+
+    margin: 25px 0;
+
+}
+
+
+.controles button {
+
+    padding: 13px 22px;
+
+    margin: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #1d4ed8;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.controles button:hover {
+
+    background: #1e40af;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* PROGRESO */
+
+.progreso {
+
+    text-align: center;
+
+    margin: 20px;
+
+}
+
+
+.barra {
+
+    height: 15px;
+
+    background: #d1d5db;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+
+}
+
+
+#barraProgreso {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #2563eb;
+
+    transition: width .5s;
+
+}
+
+
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #1f2937;
+
+    color: white;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    .registros {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .hardware {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .unidades {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+}

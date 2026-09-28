@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulación de CPU</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Simulación del funcionamiento de un CPU</h1>
+
+        <p>
+            Comunicación entre registros, memoria, almacenamiento y
+            dispositivos mediante buses
+        </p>
+    </header>
+
+
+    <!-- CONTENEDOR PRINCIPAL -->
+
+    <main class="sistema">
+
+
+        <!-- CPU -->
+
+        <section class="cpu">
+
+            <h2>🧠🤔 CPU</h2>
+
+            <div class="registros">
+                <div class="registro" id="registroPC">
+                    <h3>PC</h3>
+                    <span id="pc">1000</span>
+                    <small>Contador de programa</small>
+                </div>
+
+
+                <div class="registro" id="registroMAR">
+                    <h3>MAR</h3>
+                    <span id="mar">---</span>
+                    <small>Registro de dirección</small>
+                </div>
+
+
+                <div class="registro" id="registroMDR">
+                    <h3>MDR</h3>
+                    <span id="mdr">---</span>
+                    <small>Registro de datos</small>
+                </div>
+
+
+                <div class="registro" id="registroIR">
+                    <h3>IR</h3>
+                    <span id="ir">---</span>
+                    <small>Registro de instrucción</small>
+                </div>
+
+            </div>
+
+
+            <div class="unidades">
+
+                <div class="unidad">
+                    <h3>Unidad de Control</h3>
+
+                    <p>
+                        Coordina y controla las operaciones del CPU.
+                    </p>
+                </div>
+
+                <div class="unidad">
+                    <h3>ALU</h3>
+
+                    <p>
+                        Realiza operaciones aritméticas y lógicas.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BUSES -->
+
+        <section class="buses">
+
+            <div class="bus" id="busDirecciones">
+
+                <strong>BUS DE DIRECCIONES</strong>
+
+                <span id="datoDireccion"></span>
+
+            </div>
+
+
+            <div class="bus" id="busDatos">
+
+                <strong>BUS DE DATOS</strong>
+
+                <span id="datoDatos"></span>
+
+            </div>
+
+
+            <div class="bus" id="busControl">
+
+                <strong>BUS DE CONTROL</strong>
+
+                <span id="datoControl"></span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- HARDWARE -->
+
+        <section class="hardware">
+
+
+            <!-- RAM -->
+
+            <div class="dispositivo" id="ram">
+
+                <div class="icono">💾</div>
+
+                <h2>RAM</h2>
+
+                <p>Memoria principal</p>
+
+
+                <div class="memoria">
+
+                    <div>
+                        <b>1000</b>
+                        <span>LOAD R1,2000</span>
+                    </div>
+
+                    <div>
+                        <b>1004</b>
+                        <span>ADD R1,R2</span>
+                    </div>
+
+                    <div>
+                        <b>1008</b>
+                        <span>STORE</span>
+                    </div>
+
+                    <div>
+                        <b>2000</b>
+                        <span>25</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SSD -->
+
+            <div class="dispositivo" id="ssd">
+
+                <div class="icono">💿</div>
+
+                <h2>SSD</h2>
+
+                <p>Almacenamiento</p>
+
+                <div class="archivo">
+
+                    📄 programa.exe
+
+                </div>
+
+                <div class="archivo">
+
+                    📄 datos.txt
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PUERTOS -->
+
+            <div class="dispositivo" id="puertos">
+
+                <div class="icono">🔌</div>
+
+                <h2>Puertos E/S</h2>
+
+                <p>Entrada / Salida</p>
+
+                <button onclick="simularEntrada()">
+                    ⌨️ Teclado
+                </button>
+
+                <button onclick="simularSalida()">
+                    🖥️ Salida
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- EXPLICACIÓN -->
+
+        <section class="explicacion">
+
+            <h2 id="tituloPaso">
+                Simulación lista
+            </h2>
+
+            <p id="descripcionPaso">
+
+                Presiona "Iniciar" para comenzar el ciclo de
+                instrucción.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- CONTROLES -->
+
+        <section class="controles">
+
+            <button onclick="iniciarSimulacion()">
+                ▶ Iniciar
+            </button>
+
+
+            <button onclick="siguientePaso()">
+                ⏭ Siguiente paso
+            </button>
+
+
+            <button onclick="reiniciar()">
+                🔄 Reiniciar
+            </button>
+
+        </section>
+
+
+        <!-- INDICADOR -->
+
+        <section class="progreso">
+
+            <span id="numeroPaso">
+                Paso 0 de 8
+            </span>
+
+            <div class="barra">
+
+                <div id="barraProgreso"></div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+
+        <p>
+            Simulación educativa — Arquitectura de Computadoras
+        </p>
+
+    </footer>
+
+
+    <script src="simulacion.js"></script>
+
+</body>
+
+</html>
